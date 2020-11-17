@@ -1,14 +1,14 @@
 const express = require('express');
-const controller = require('../controllers/users');
+const controller = require('../controllers/User');
 const LifeHack = require('../controllers/LifehacksControllers');
 const HackSteps = require('../controllers/StepsControllers');
-const UserValidation = require('middlewares/UserValidation');
-const AuthenticateToken = require('../auth/AuthenticationToken');
+const UserValidation = require('../middlewares/UserValidation');
+const AuthenticateToken = require('../auth/AuthenticateToken');
 
 const router = express.Router();
 
 router.post('/auth/signup', UserValidation.userInput, controller.createUser);
-router.post('/auth/signin', UserValidation.userLogin, controller.login);
+router.post('/auth/login', UserValidation.userLogin, controller.login);
 
 router.route('/users').get(AuthenticateToken, controller.getAllUsers);
 
