@@ -20,7 +20,7 @@ const addHack = async hack => {
     return newhack;
   } catch (err) {
     if (err.routine === '_bt_check_unique') {
-      return { status: 409, mesage: 'Lifehack with this title already exist' };
+      return { status: 409, message: 'Lifehack with this title already exist' };
     }
   }
 };
@@ -34,7 +34,7 @@ const updateHack = async (changes, id) => {
       .then(hack => hack[0]);
   } catch (err) {
     if (err.routine === '_bt_check_unique') {
-      return { status: 409, mesage: 'Lifehack with this title already exist' };
+      return { status: 409, message: 'Lifehack with this title already exist' };
     }
   }
 };
@@ -69,7 +69,7 @@ const updateStep = async (changes, id) => {
       .then(hack => hack[0]);
   } catch (err) {
     if (err.routine === '_bt_check_unique') {
-      return { status: 409, mesage: 'Lifehack with this title already exist' };
+      return { status: 409, message: 'Lifehack with this title already exist' };
     }
   }
 };

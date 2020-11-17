@@ -3279,7 +3279,7 @@
                   "message": "Review Added Successfully",
                   "body": {
                     "status": 409,
-                    "mesage": "You have already saved this lifehack"
+                    "message": "You have already saved this lifehack"
                   }
                 }
               },
@@ -5719,7 +5719,7 @@
           "message": "Review Added Successfully",
           "body": {
             "status": 409,
-            "mesage": "You have already saved this lifehack"
+            "message": "You have already saved this lifehack"
           }
         },
         "type": "object",
@@ -5749,7 +5749,7 @@
         "title": "Body15",
         "example": {
           "status": 409,
-          "mesage": "You have already saved this lifehack"
+          "message": "You have already saved this lifehack"
         },
         "type": "object",
         "properties": {
@@ -5757,13 +5757,13 @@
             "type": "integer",
             "format": "int32"
           },
-          "mesage": {
+          "message": {
             "type": "string"
           }
         },
         "required": [
           "status",
-          "mesage"
+          "message"
         ]
       }
     },

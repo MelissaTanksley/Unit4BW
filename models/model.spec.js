@@ -69,7 +69,7 @@ describe('Test case for user table', () => {
     createdHack = await hackModel.addHack(validHack);
     expect(createdHack).toEqual({
       status: 409,
-      mesage: 'Lifehack with this title already exist'
+      message: 'Lifehack with this title already exist'
     });
   });
 

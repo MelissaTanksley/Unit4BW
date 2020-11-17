@@ -42,7 +42,7 @@ const saveHack = async post => {
     return saved;
   } catch (err) {
     if (err.routine === '_bt_check_unique') {
-      return { status: 409, mesage: 'You have already reviewed this lifehack' };
+      return { status: 409, message: 'You have already reviewed this lifehack' };
     }
   }
 };
@@ -55,14 +55,14 @@ const addReview = async review => {
     return postReview;
   } catch (err) {
     if (err.routine === '_bt_check_unique') {
-      return { status: 409, mesage: 'You have already saved this lifehack' };
+      return { status: 409, message: 'You have already saved this lifehack' };
     }
   }
 };
 // select lifehacks.title, reviews.rating, reviews.like from lifehacks
 // join reviews on reviews.post_id = lifehacks.id
 const getReviews = async () => {
-  return db
+  return await db
     .select('lifehacks.title', 'reviews.rating', 'reviews.like')
     .from('lifehacks')
     .join('reviews', 'reviews.post_id', 'lifehacks.id');
