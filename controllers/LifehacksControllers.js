@@ -1,6 +1,6 @@
 const requestHelper = require('../helpers/requestHelper');
-const guideModel = require('../database/models/lifeHackModel');
-const userModel = require('../database/models/model');
+const guideModel = require('../models/lifeHackModel');
+const userModel = require('../models/model');
 
 const createLifeHack = async (req, res) => {
   const guide_auth_id = req.decoded.userId;
