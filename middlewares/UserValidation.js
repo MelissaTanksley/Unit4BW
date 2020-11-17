@@ -1,8 +1,8 @@
 const bcrypt = require('bcryptjs');
 const checkItem = require('../helpers/checkInput');
 const requestHelper = require('../helpers/requestHelper');
-const userModel = require('../database/models/model');
-const hackModel = require('../database/models/lifeHackModel');
+const userModel = require('../models/model');
+const hackModel = require('../models/lifeHackModel');
 require('dotenv').config();
 
   const userInput(req, res, next) => {
