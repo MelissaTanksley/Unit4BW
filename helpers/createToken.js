@@ -1,6 +1,7 @@
+require('dotenv').config();
+
 const jwt = require('jsonwebtoken');
 const requestHelper = require('./requestHelper');
-require('dotenv').config();
 
 const createToken = (res, statusCode, message, result) => {
   const user = {

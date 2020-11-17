@@ -2,7 +2,7 @@ const express = require('express');
 const controller = require('../controllers/users');
 const LifeHack = require('../controllers/LifehacksControllers');
 const HackSteps = require('../controllers/StepsControllers');
-const UserValidation = require('middlewares/UserValidation');
+const UserValidation = require('../middlewares/UserValidation');
 const AuthenticateToken = require('../auth/AuthenticationToken');
 
 const router = express.Router();

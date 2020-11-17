@@ -1,6 +1,6 @@
 const requestHelper = require('../helpers/requestHelper');
 const createToken = require('../helpers/createToken');
-const userModel = require('../database/models/model');
+const userModel = require('../models/model');
 
 const createUser = async (req, res) => {
   try {

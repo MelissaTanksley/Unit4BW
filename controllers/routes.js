@@ -8,7 +8,7 @@ const AuthenticateToken = require('../auth/AuthenticateToken');
 const router = express.Router();
 
 router.post('/auth/signup', UserValidation.userInput, controller.createUser);
-router.post('/auth/login', UserValidation.userLogin, controller.login);
+router.post('/auth/signin', UserValidation.userLogin, controller.login);
 
 router.route('/users').get(AuthenticateToken, controller.getAllUsers);
 

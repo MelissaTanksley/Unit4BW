@@ -13,12 +13,11 @@ server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 server.use('/api/v1', routes);
 
-server.get('/', (req, res) => {
-  res.status(200).json({
+/*server.get('/', (req, res) => {
     status: 200,
     message: 'Welcome'
-  });
-});
+}); */
+
 
 server.get('*', (req, res) => {
   res.status(404).json({

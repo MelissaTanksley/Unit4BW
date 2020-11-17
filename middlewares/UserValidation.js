@@ -1,11 +1,13 @@
+require('dotenv').config();
+
 const bcrypt = require('bcryptjs');
 const checkItem = require('../helpers/checkInput');
 const requestHelper = require('../helpers/requestHelper');
 const userModel = require('../models/model');
 const hackModel = require('../models/lifeHackModel');
-require('dotenv').config();
 
-  const userInput(req, res, next) => {
+
+userInput = (req, res, next) => {
     const { guide, email, password, fullname, profileimage } = req.body;
     const username = req.body.username.trim();
 
@@ -54,7 +56,7 @@ require('dotenv').config();
     next();
   }
 
-   userSignin(req, res, next) {
+   userSignin = (req, res, next) => {
     const { username, password, email } = req.body;
     const input = username ? username : email;
     try {
@@ -90,7 +92,7 @@ require('dotenv').config();
     }
   }
 
-  const lifehackValidation(req, res, next) => {
+  lifehackValidation = (req, res, next) => {
     const { title } = req.body;
     const exists = await hackModel.getSingleHack({ title });
     if (exists) {
@@ -111,7 +113,7 @@ require('dotenv').config();
     return next();
   }
 
-  stepsValidation(req, res, next) {
+  stepsValidation = (req, res, next) => {
     const { steps } = req.body;
 
     const check = checkItem({ steps });
@@ -125,7 +127,7 @@ require('dotenv').config();
     return next();
   }
 
-  const reviewsValidation (req, res, next) => {
+  reviewsValidation = (req, res, next) => {
     const { review } = req.body;
 
     const check = checkItem({ review });

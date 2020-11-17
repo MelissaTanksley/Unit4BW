@@ -1,4 +1,4 @@
-const db = require('/dbConfig');
+const db = require('./dbConfig');
 const userModel = require('./model');
 const hackModel = require('./lifeHackModel');
 

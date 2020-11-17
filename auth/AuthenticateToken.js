@@ -1,12 +1,13 @@
-const jwt = require('jsonwebtoken');
-const requestHelper = require('../helpers/requestHelper'); //Melissa's set up. Can totally be changed
 require('dotenv').config();
+
+const jwt = require('jsonwebtoken');
+const requestHelper = require('../helpers/requestHelper'); 
 
 const AuthenticateToken = (req, res, next) => {
   const token =
     req.body.token ||
     req.query.token ||
-    req.headers['x-access-token'] || // can be changed
+    req.headers['x-access-token'] || 
     req.headers.authorization;
   // decode token
   if (token) {

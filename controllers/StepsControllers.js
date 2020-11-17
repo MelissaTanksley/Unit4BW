@@ -1,5 +1,5 @@
 const requestHelper = require('../helpers/requestHelper');
-const stepsModel = require('../database/models/lifeHackModel');
+const stepsModel = require('../models/lifeHackModel');
 
 const getStepsForASingleHack = async (req, res) => {
   try {
