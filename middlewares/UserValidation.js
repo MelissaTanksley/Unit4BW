@@ -7,7 +7,7 @@ const userModel = require('../models/model');
 const hackModel = require('../models/lifeHackModel');
 
 
-userInput = (req, res, next) => {
+const userInput = (req, res, next) => {
     const { guide, email, password, fullname, profileimage } = req.body;
     const username = req.body.username.trim();
 
@@ -55,7 +55,6 @@ userInput = (req, res, next) => {
     req.newuser = newUser;
     next();
   }
-
    userSignin = (req, res, next) => {
     const { username, password, email } = req.body;
     const input = username ? username : email;
@@ -139,4 +138,5 @@ userInput = (req, res, next) => {
       });
     }
     return next();
-  }
+  
+}
