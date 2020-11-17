@@ -125,7 +125,7 @@ require('dotenv').config();
     return next();
   }
 
-  const reviewsValidation(req, res, next) => {
+  const reviewsValidation (req, res, next) => {
     const { review } = req.body;
 
     const check = checkItem({ review });
@@ -138,4 +138,3 @@ require('dotenv').config();
     }
     return next();
   }
-};
