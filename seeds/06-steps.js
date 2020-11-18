@@ -1,4 +1,4 @@
-const steps = require('./mock/steps');
+const steps = require('../mock/steps');
 exports.seed = function(knex) {
   // Deletes ALL existing entries
   return knex('hacksteps')
