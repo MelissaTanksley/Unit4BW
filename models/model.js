@@ -1,32 +1,17 @@
-const db = require('./dbConfig');
+const db = require('../dbConfig');
 
-/**
- *
- *
- * @returns user object
- */
 const findAuthUser = () => {
   let users = db('authenticatedusers');
   return users.map(user => {
     return { ...user, guide: !!user.guide };
   });
 };
-/**
- *
- *
- * @param {*} filter
- * @returns
- */
+
 const findSingleUser = async filter => {
   const user = await db('authenticatedusers').where(filter);
   return user;
 };
-/**
- *
- *
- * @param {*} user
- * @returns user object
- */
+
 const addUser = async user => {
   let newuser = await db('authenticatedusers')
     .insert(user)

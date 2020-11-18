@@ -1,6 +1,6 @@
-const db = require('./dbConfig');
-const userModel = require('./model');
-const hackModel = require('./lifeHackModel');
+const db = require('../dbConfig');
+const userModel = require('../models/model');
+const hackModel = require('../models/lifeHackModel');
 
 let createdHack = {};
 
