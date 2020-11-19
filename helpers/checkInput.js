@@ -1,4 +1,4 @@
-const validator = require('validator');
+const validator = require('');
 
 const checkInput = inputValue => {
   const errors = {};

@@ -8,7 +8,7 @@ const hackModel = require('../models/lifeHackModel');
 
 
 userInput = (req, res, next) => {
-    const { guide, email, password, fullname, profileimage } = req.body;
+    const { guide, email, password, fullname, profileimage, validator } = req.body;
     const username = req.body.username.trim();
 
     const check = checkItem({
@@ -23,8 +23,8 @@ userInput = (req, res, next) => {
         check
       });
     }
-    const userEmail = await userModel.findSingleUser({ email: email });
-    const userName = await userModel.findSingleUser({
+    const userEmail = /*await*/ userModel.findSingleUser({ email: email });
+    const userName = /*await*/ userModel.findSingleUser({
       username: username
     });
     let existingUser;
@@ -42,8 +42,8 @@ userInput = (req, res, next) => {
       );
     }
 
-    const hash = await bcrypt.hash(password, 12);
-    const newUser = await userModel.addUser({
+    const hash = /*await*/ bcrypt.hash(password, 12);
+    const newUser = /*await*/ userModel.addUser({
       username,
       email,
       password: hash,
@@ -71,11 +71,11 @@ userInput = (req, res, next) => {
         });
       }
       let validate = email
-        ? await userModel.findSingleUser({ email })
-        : await userModel.findSingleUser({ username });
+        //? await userModel.findSingleUser({ email })
+       // : await userModel.findSingleUser({ username });
 
       if (validate.length > 0 && validate[0].password) {
-        const checkPassword = await bcrypt.compareSync(
+        const checkPassword = /*await*/ bcrypt.compareSync(
           password,
           validate[0].password
         );
@@ -94,7 +94,7 @@ userInput = (req, res, next) => {
 
   lifehackValidation = (req, res, next) => {
     const { title } = req.body;
-    const exists = await hackModel.getSingleHack({ title });
+    const exists = /*await*/ hackModel.getSingleHack({ title });
     if (exists) {
       return requestHelper.error(
         res,

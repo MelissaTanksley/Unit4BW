@@ -2,7 +2,7 @@ const db = require('../dbConfig');
 
 const findAuthUser = () => {
   let users = db('authenticatedusers');
-  return users.map(user => {
+  return users(user => {
     return { ...user, guide: !!user.guide };
   });
 };

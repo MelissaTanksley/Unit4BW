@@ -1,7 +1,7 @@
-const app = require('../../server/server');
+const app = require('../server/server');
 const request = require('supertest')(app);
-const mock = require('../../mock/auth.mock');
-const hacks = require('../../mock/lifehack.mock');
+const mock = require('../mock/auth.mock');
+const hacks = require('../mock/lifehack.mock');
 const baseUrl = '/api/v1';
 
 // eslint-disable-next-line no-unused-vars
